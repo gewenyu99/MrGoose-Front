@@ -5,7 +5,7 @@ import canada from './Canada.jpg'
 class Image extends React.Component {
     constructor() {
       super();
-      this.state = { width: 0, height: 0, file: '',imagePreviewUrl: '', w:'', h: '600' url: 'https://mr.goose.ml/api'};
+      this.state = { width: 0, height: 0, file: '',imagePreviewUrl: '', w:'', h: '600', url: 'https://mr.goose.ml/api'};
       this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
       this.scrollToTop = this.scrollToTop.bind(this);
     }
