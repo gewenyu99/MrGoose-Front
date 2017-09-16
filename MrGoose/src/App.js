@@ -8,8 +8,10 @@ class App extends Component {
 
   constructor() {
     super();
-    this.state = { width: 0, height: 0, file: '',imagePreviewUrl: '' };
+    this.state = { width: 0, height: 0, file: '',imagePreviewUrl: '', line1: 'Mr', line2: 'Goose' };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    //this.onMouseLeave1 = this.onMouseLeave1.bind(this);
+    let formData = new FormData();
   }
 
   componentDidMount() {
@@ -25,6 +27,21 @@ class App extends Component {
       this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
+  /*
+  onMouseOver1(){
+    this.setState({line1: 'He'});
+    this.setState({line2: 'attac'});
+  }
+  onMouseOver2(){
+    this.setState({line1: 'He'});
+  }
+  onMouseLeave1(){
+    window.alert('hi');
+  }
+  onMouseLeave2(){
+    window.alert('bye');   
+  }
+   */ 
 
   render() {
     const style1 = {
@@ -99,19 +116,19 @@ class App extends Component {
       <div>
         <div className="App">
           <div className='TitleBar'>
-            <img src = {god} width={this.state.width*0.2} style={god1CSS}/>
-            <img src = {god} width={this.state.width*0.2} style={god2CSS} className = 'godReverse'/>
+            <img src = {god} width={this.state.width*0.2} style={god1CSS} /*onMouseOver={this.onMouseOver1} onMouseLeave = {this.onMouseLeave1}*//>
+            <img src = {god} width={this.state.width*0.2} style={god2CSS} /*onMouseOver={this.onMouseOver2} onMouseLeave = {this.onMouseLeave2} className = 'godReverse'*//>
             <svg style = {style1} id= 'topleft'>
               <rect width={this.state.width*0.05} height={this.state.width*0.07} x="0" y="0" fill='#D91E18'/>
             </svg>
             <h1 style = {style21}>
-              Mr
+              {this.state.line1}
             </h1>
             <div style={style4}>
               <img src={mleaf} width={0.05*this.state.width} />
             </div>
             <h1 style = {style22}>
-              Goose
+              {this.state.line2}
             </h1>
             <svg style = {style3}>
               <rect width={this.state.width*0.05} height={this.state.width*0.07} x="0" y="0" fill='#D91E18'/>

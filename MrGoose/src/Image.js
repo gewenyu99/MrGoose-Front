@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Scroll, {scroller} from 'react-scroll';  
-import canada from './Canada.jpg'
+import canada from './Canada.jpg';
+import Superagent from 'superagent';
 
 class Image extends React.Component {
     constructor() {
@@ -33,19 +34,11 @@ class Image extends React.Component {
     //Handles submission, to be done.
     _handleSubmit(e) {
       e.preventDefault();//Prevent going off application.
-      console.log('uploading ', this.state.file);
+      console.log('uploading ', this.state.url);
 
-      const file = this.state.file;
+        const file = this.state.file;
 
-      fetch(this.state.url, { 
-        method: 'POST',
-        data: {
-            file,
-            name: 'goose file'
-        }
-      }).then(function(response) {
-        return response.json()
-      })
+        Superagent.post('./api').send(file);
     }
   
 
