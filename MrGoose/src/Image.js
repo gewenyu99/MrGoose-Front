@@ -81,9 +81,7 @@ class Image extends React.Component {
                 <form action="/api" method="post" enctype="multipart/form-data">
                     <label className = 'myLabel'>
                         Click to Choose an Image
-                        <input className="fileInput" 
-                        type="file" 
-                        onChange={(e)=>this._handleImageChange(e)} />
+                        <input className="fileInput" name="file" type="file" onChange={(e)=>this._handleImageChange(e)} />
                     </label>
 
                     <div className="imgPreview">
