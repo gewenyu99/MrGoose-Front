@@ -92,7 +92,7 @@ class Image extends React.Component {
                        
                     <button className="submitButton" 
                         type="submit" 
-                        onClick={(e)=>this._handleSubmit(e)}>Rate my image, Mr.Goose!
+                        /*onClick={(e)=>this._handleSubmit(e)}*/>Rate my image, Mr.Goose!
                     </button>
                 </form>
                 
