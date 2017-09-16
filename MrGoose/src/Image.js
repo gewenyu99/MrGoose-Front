@@ -78,7 +78,7 @@ class Image extends React.Component {
     
         return (
             <div className="previewComponent" style={style}>
-                <form onSubmit={(e)=>this._handleSubmit(e)}>
+                <form action="/action_page_post.php" method="post">
                     <label className = 'myLabel'>
                         Click to Choose an Image
                         <input className="fileInput" 
