@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import Scroll, {scroller} from 'react-scroll';  
+import canada from './Canada.jpg'
 
 class Image extends React.Component {
     constructor() {
       super();
-      this.state = { width: 0, height: 0, file: '',imagePreviewUrl: '', goose:'./goose.gif' };
+      this.state = { width: 0, height: 0, file: '',imagePreviewUrl: '', w:'', h: '600'};
       this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
       this.scrollToTop = this.scrollToTop.bind(this);
     }
@@ -49,6 +50,7 @@ class Image extends React.Component {
           file: file,
           imagePreviewUrl: reader.result,
         });
+
         console.log('uploading ', this.state.file);
       }
   
@@ -56,33 +58,43 @@ class Image extends React.Component {
     }
   
     render() {
-
-
-
-      let {imagePreviewUrl} = this.state;
-      let $imagePreview = null;
-      if (imagePreviewUrl) {
-        $imagePreview = (<img src={imagePreviewUrl} width = {0.48*this.state.width} height = {0.27*this.state.width}/>);
-      } else {
-        $imagePreview = (<img src={this.state.goose} width = {0.48*this.state.width} height = {0.27*this.state.width}/>);
-      }
-  
-      return (
-        <div className="previewComponent">
-          <form onSubmit={(e)=>this._handleSubmit(e)}>
-            <input className="fileInput" 
-              type="file" 
-              onChange={(e)=>this._handleImageChange(e)} />
-            <button className="submitButton" 
-              type="submit" 
-              onClick={(e)=>this._handleSubmit(e)}>Upload Image
-            </button>
-          </form>
-          <div className="imgPreview">
-            {$imagePreview}
-          </div>
-        </div>
-      )
+        const style = {
+            marginLeft: this.state.width * 0.1 + 'px',
+            width: this.state.width * 0.5
+        }
+        
+      
+        let {imagePreviewUrl} = this.state;
+        let $imagePreview = null;
+        if (imagePreviewUrl) {
+            $imagePreview = (<img src={imagePreviewUrl} width = {0.48*this.state.width}/>);
+        } else {
+            $imagePreview = (<img src={canada} width = {0.48*this.state.width}/>);
+        }
+    
+        return (
+            <div className="previewComponent" style={style}>
+                <form onSubmit={(e)=>this._handleSubmit(e)}>
+                    <label className = 'myLabel'>
+                        Click to Choose an Image
+                        <input className="fileInput" 
+                        type="file" 
+                        onChange={(e)=>this._handleImageChange(e)} />
+                    </label>
+                       
+                    <button className="submitButton" 
+                    type="submit" 
+                    onClick={(e)=>this._handleSubmit(e)}>Upload Image
+                    </button>
+                </form>
+                <div className="imgPreview">
+                    {$imagePreview}
+                </div>
+                <p>
+                    
+                </p>
+            </div>
+        )
     }
   }
     

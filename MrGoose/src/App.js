@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Image from './Image';
-
+import mleaf from './Maple_Leaf.svg'
 
 class App extends Component {
 
@@ -31,18 +31,35 @@ class App extends Component {
       left: ''+0.3*this.state.width,
       top: ''+0.01*this.state.width
     }
-    const style2 = {
+    const style21 = {
+
       textAlign: 'center',
       display: 'inline-block',
       padding: '0',
-      margin: '0',
+      marginTop: '0',
+      marginRight: ''+ 0.03*this.state.width,
       fontSize: ''+0.06*this.state.width
-      
+    }
+    const style22 = {
+
+      textAlign: 'center',
+      display: 'inline-block',
+      padding: '0',
+      marginTop: '0',
+      marginLeft: ''+0.03*this.state.width,
+      fontSize: ''+0.06*this.state.width
     }
     const style3 = {
       position: 'absolute',
       left: ''+0.65*this.state.width,
       top: ''+0.01*this.state.width
+    }
+
+    const style4 = {
+      display: 'inline-block',
+      position: 'absolute',
+      left: ''+0.455*this.state.width,
+      top: ''+0.025*this.state.width
     }
 
     return (
@@ -51,10 +68,13 @@ class App extends Component {
           <svg style = {style1}>
             <rect width={this.state.width*0.05} height={this.state.width*0.07} x="0" y="0" fill='#D91E18'/>
           </svg>
-          <h1 style = {style2}>
+          <h1 style = {style21}>
             Mr
           </h1>
-          <h1 style = {style2}>
+          <div style={style4}>
+            <img src={mleaf} width={0.05*this.state.width} />
+          </div>
+          <h1 style = {style22}>
             Goose
           </h1>
           <svg style = {style3}>
