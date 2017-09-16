@@ -24,6 +24,7 @@ h1
   align-content: center;  
 }
 
+
 @font-face {
   font-family: Munro;
   src: url('./KaushanScript-Regular.otf');
@@ -34,12 +35,13 @@ h1
   padding-top: 0.5vw;
   font-family: Munro, Impact;
   display: block;
-  border-left: 15vw solid #D91E18;;
-  border-right: 15vw solid #D91E18;
+  border-left: 20vw solid #D91E18;;
+  border-right: 20vw solid #D91E18;
   border-top: 0;
   border-bottom: 0;
   text-align:center;
   align-content: center;
+  background-color: white;
 }
  
 
@@ -61,15 +63,14 @@ h1
 
 .myLabel {
   color: white;
-  border: 1vw solid #D91E18;
+  border: 0.5vw solid #D91E18;
   margin: 4px;
   font-size: 3vw;
-  text-align: center;
+  text-align: top;
   background: #D91E18;
   display: inline-block;
   border-radius:1vw;
-  width: 90%;
-  height: 4vw;
+  width: 70%;
 }
 .myLabel:hover {
   background:white;
@@ -97,6 +98,7 @@ h1
   margin: 1vw;
 }
 .imgPreview img {
+  width: 70%;
 }
 .previewText {
   font-family: Munro, Impact;
@@ -107,11 +109,11 @@ h1
   color: white;
   background: #D91E18;
   font-family: Munro, Impact;
-  font-size: 2vw;
+  font-size: 3vw;
   cursor: pointer;
   border: 0.6vw solid #D91E18;
   border-radius: 0.4vw;
-}
+  }
 .submitButton:hover {
   border: 0.6vw inset #D91E18;
 

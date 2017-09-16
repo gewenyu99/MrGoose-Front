@@ -65,7 +65,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className='TitleBar'>
-          <svg style = {style1}>
+          <svg style = {style1} id= 'topleft'>
             <rect width={this.state.width*0.05} height={this.state.width*0.07} x="0" y="0" fill='#D91E18'/>
           </svg>
           <h1 style = {style21}>

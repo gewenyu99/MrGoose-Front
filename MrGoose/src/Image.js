@@ -59,7 +59,7 @@ class Image extends React.Component {
   
     render() {
         const style = {
-            marginLeft: this.state.width * 0.1 + 'px',
+            marginLeft: this.state.width * 0.05 + 'px',
             width: this.state.width * 0.5
         }
         
@@ -81,15 +81,17 @@ class Image extends React.Component {
                         type="file" 
                         onChange={(e)=>this._handleImageChange(e)} />
                     </label>
+
+                    <div className="imgPreview">
+                    {$imagePreview}
+                    </div>
                        
                     <button className="submitButton" 
                     type="submit" 
                     onClick={(e)=>this._handleSubmit(e)}>Upload Image
                     </button>
                 </form>
-                <div className="imgPreview">
-                    {$imagePreview}
-                </div>
+                
                 <p>
                     
                 </p>
