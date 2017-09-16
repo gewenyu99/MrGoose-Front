@@ -5,7 +5,7 @@ import canada from './Canada.jpg'
 class Image extends React.Component {
     constructor() {
       super();
-      this.state = { width: 0, height: 0, file: '',imagePreviewUrl: '', w:'', h: '600'};
+      this.state = { width: 0, height: 0, file: '',imagePreviewUrl: '', w:'', h: '600' url: 'https://mr.goose.ml/api'};
       this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
       this.scrollToTop = this.scrollToTop.bind(this);
     }
@@ -35,10 +35,13 @@ class Image extends React.Component {
       e.preventDefault();//Prevent going off application.
       console.log('uploading ', this.state.file);
 
-      fetch('http://127.0.0.1:5000/', { 
+      file = this.state.file;
+
+      fetch(this.state.url, { 
         method: 'POST',
         data: {
-            file : this.state.file
+            file,
+            name: 'goose file'
         }
       }).then(function(response) {
         return response.json()
