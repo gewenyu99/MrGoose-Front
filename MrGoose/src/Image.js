@@ -32,19 +32,18 @@ class Image extends React.Component {
 
     //Handles submission, to be done.
     _handleSubmit(e) {
+      var formData = new FormData();
       e.preventDefault();//Prevent going off application.
       console.log('uploading ', this.state.file);
-
+	
       const file = this.state.file;
-
+      formData.append("file", file);
       fetch(this.state.url, { 
         method: 'POST',
-        data: {
-            file,
-            name: 'goose file'
-        }
+        body: formData
       }).then(function(response) {
-        return response.json()
+	console.log(response);
+        return response
       })
     }
   
