@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Scroll, {scroller} from 'react-scroll';  
-import canada from './Canada.jpg';
-import Superagent from 'superagent';
+import canada from './Canada.jpg'
 
 class Image extends React.Component {
     constructor() {
@@ -32,14 +31,22 @@ class Image extends React.Component {
 
 
     //Handles submission, to be done.
-    /*_handleSubmit(e) {
+    _handleSubmit(e) {
       e.preventDefault();//Prevent going off application.
-      console.log('uploading ', this.state.url  );
+      console.log('uploading ', this.state.file);
 
-        const file = this.state.file;
+      const file = this.state.file;
 
-        Superagent.post('./api').type('form').send(file);
-    }*/
+      fetch(this.state.url, { 
+        method: 'POST',
+        data: {
+            file,
+            name: 'goose file'
+        }
+      }).then(function(response) {
+        return response.json()
+      })
+    }
   
 
     //Handles loading of files.
@@ -78,10 +85,12 @@ class Image extends React.Component {
     
         return (
             <div className="previewComponent" style={style}>
-                <form action="/api" method="post" enctype="multipart/form-data">
+                <form onSubmit={(e)=>this._handleSubmit(e)}>
                     <label className = 'myLabel'>
                         Click to Choose an Image
-                        <input className="fileInput" name="file" type="file" onChange={(e)=>this._handleImageChange(e)} />
+                        <input className="fileInput" 
+                        type="file" 
+                        onChange={(e)=>this._handleImageChange(e)} />
                     </label>
 
                     <div className="imgPreview">
@@ -90,7 +99,7 @@ class Image extends React.Component {
                        
                     <button className="submitButton" 
                         type="submit" 
-                        /*onClick={(e)=>this._handleSubmit(e)}*/>Rate my image, Mr.Goose!
+                        onClick={(e)=>this._handleSubmit(e)}>Rate my image, Mr.Goose!
                     </button>
                 </form>
                 
