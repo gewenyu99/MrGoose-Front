@@ -33,8 +33,16 @@ class Image extends React.Component {
     //Handles submission, to be done.
     _handleSubmit(e) {
       e.preventDefault();//Prevent going off application.
-  
       console.log('uploading ', this.state.file);
+
+      fetch('http://127.0.0.1:5000/', { 
+        method: 'POST',
+        data: {
+            file : this.state.file
+        }
+      }).then(function(response) {
+        return response.json()
+      })
     }
   
 
@@ -83,12 +91,12 @@ class Image extends React.Component {
                     </label>
 
                     <div className="imgPreview">
-                    {$imagePreview}
+                        {$imagePreview}
                     </div>
                        
                     <button className="submitButton" 
-                    type="submit" 
-                    onClick={(e)=>this._handleSubmit(e)}>Upload Image
+                        type="submit" 
+                        onClick={(e)=>this._handleSubmit(e)}>Upload Image
                     </button>
                 </form>
                 

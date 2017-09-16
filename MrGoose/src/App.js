@@ -91,7 +91,7 @@ class App extends Component {
       marginTop: '0',
       display: 'inline-block',
       position: 'absolute',
-      left: ''+0.7  *this.state.width,
+      left: ''+0.68  *this.state.width,
       top: '0'
     }
 
