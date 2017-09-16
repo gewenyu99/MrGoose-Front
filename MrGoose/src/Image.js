@@ -32,14 +32,14 @@ class Image extends React.Component {
 
 
     //Handles submission, to be done.
-    _handleSubmit(e) {
+    /*_handleSubmit(e) {
       e.preventDefault();//Prevent going off application.
       console.log('uploading ', this.state.url  );
 
         const file = this.state.file;
 
         Superagent.post('./api').type('form').send(file);
-    }
+    }*/
   
 
     //Handles loading of files.
