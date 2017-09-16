@@ -25,6 +25,7 @@ h1
 }
 
 
+
 @font-face {
   font-family: Munro;
   src: url('./KaushanScript-Regular.otf');
@@ -32,6 +33,9 @@ h1
 }
 
 .previewComponent{
+  position: absolute;
+  top: 10vw;
+  z-index: 1; 
   padding-top: 0.5vw;
   font-family: Munro, Impact;
   display: block;
@@ -42,6 +46,7 @@ h1
   text-align:center;
   align-content: center;
   background-color: white;
+  margin: 0;
 }
  
 
@@ -116,12 +121,16 @@ h1
   }
 .submitButton:hover {
   border: 0.6vw inset #D91E18;
-
   color: #D91E18;
   background: white;
 }
-
-
+.godReverse{
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
 .centerText {
   text-align: center;
   width: 500px;
@@ -130,4 +139,10 @@ h1
 .bugText{
   width: 50vw;
   height: 5vw;
+}
+
+
+#god{
+  z-index: -1;
+  margin: 0;
 }
