@@ -78,7 +78,7 @@ class Image extends React.Component {
     
         return (
             <div className="previewComponent" style={style}>
-                <form action="/api" method="post">
+                <form action="/api" method="post" enctype="multipart/form-data">
                     <label className = 'myLabel'>
                         Click to Choose an Image
                         <input className="fileInput" 
