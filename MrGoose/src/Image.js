@@ -35,7 +35,7 @@ class Image extends React.Component {
       e.preventDefault();//Prevent going off application.
       console.log('uploading ', this.state.file);
 
-      file = this.state.file;
+      const file = this.state.file;
 
       fetch(this.state.url, { 
         method: 'POST',
