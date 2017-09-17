@@ -9,6 +9,7 @@ class Image extends React.Component {
       this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
       this.scrollToTop = this.scrollToTop.bind(this);
       this._handleSubmit = this._handleSubmit.bind(this);
+      this.updateToParent = this.updateToParent.bind(this);
     }
   
     //general scaling
@@ -34,6 +35,7 @@ class Image extends React.Component {
     //Handles submission, to be done.
     _handleSubmit(e) {
       var formData = new FormData();
+      var tempResult;
       e.preventDefault();//Prevent going off application.
       console.log('uploading ', this.state.file);
 	
@@ -45,13 +47,18 @@ class Image extends React.Component {
       }).then(function(response) {
         console.log(response);
         const temp = response.json().then(function(result){ 
-        this.state.promiseValue = result; 
+        tempResult = result;
 	});
-        this.props.returnValue(this.state.promiseValue);
+        
         console.log(temp);
-
         return response;
       })
+      this.setState({tempResult: tempResult});
+      this.updateToParent(tempResult);
+    }
+
+    updateToParent(result){
+        this.props.returnValue(this.state.promiseValue);
     }
   
 
