@@ -43,9 +43,11 @@ class Image extends React.Component {
         body: formData
       }).then(function(response) {
         console.log(response);
-        const temp = response.json().stringify;
-
-        windo.alert(temp);
+        const temp = response.json().then(function(result){ 
+		window.alert(result);
+	});
+	
+        console.log(temp);
 
         return response;
       })
