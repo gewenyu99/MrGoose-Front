@@ -8,6 +8,7 @@ class Image extends React.Component {
       this.state = { width: 0, height: 0, file: '',imagePreviewUrl: '', w:'', h: '600', url: 'https://mr.goose.ml/api', promiseValue: ''};
       this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
       this.scrollToTop = this.scrollToTop.bind(this);
+      this._handleSubmit = this._handleSubmit.bind(this);
     }
   
     //general scaling
