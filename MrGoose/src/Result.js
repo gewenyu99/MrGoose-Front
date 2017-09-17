@@ -25,17 +25,16 @@ class Result extends React.Component {
   
     render() {
         const style = {
-            left:this.state.width * 0.18 + 'px',
             position: 'absolute',
-            top:'15vw',
+            top:'10vw',
             fontSize: '1vw',
-            marginLeft: this.state.width * 0.05 + 'px',
+            marginLeft: this.state.width * 0.045 + 'px',
             width: this.state.width * 0.5,
             display: this.props.ifShow
         }
     
         return (
-           <div style = {style}>
+           <div style = {style} className = 'result'>
                <h1>
                    {this.props.result}
                </h1>

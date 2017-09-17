@@ -51,6 +51,23 @@ img:hover{
   background-color: white;
   margin: 0;
 }
+
+.result{
+  position: absolute;
+  top: 10vw;
+  z-index: 1; 
+  padding-top: 0.5vw;
+  font-family: Munro, Impact;
+  display: block;
+  border-left: 20vw solid #D91E18;;
+  border-right: 20vw solid #D91E18;
+  border-top: 0;
+  border-bottom: 0;
+  text-align:center;
+  align-content: center;
+  background-color: white;
+  margin: 0;
+}
  
 
 .fileInput {
