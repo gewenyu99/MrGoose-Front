@@ -60,7 +60,15 @@ class Image extends React.Component {
     }
 
     updateToParent(result){
-        this.props.returnValue(this.state.promiseValue);
+        var val = 100*((Math.abs(this.state.promiseValue-0.5))/0.5)
+
+        if(this.state.promiseValue>0){
+            this.props.returnValue('The image received a ' + val + ' from our beloved Mr.Goose!');
+        }else{
+            this.props.returnValue('Oh no! Mr. Goose angrily rejected your image, something must have been wrong!');
+        }
+        
+        
     }
   
 
