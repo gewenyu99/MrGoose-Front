@@ -48,10 +48,14 @@ class Image extends React.Component {
       }).then(function(response) {
         console.log(response);
         const temp = response.json().then(function(result){ 
-            this.setState({promiseValue: result});
-            this.updateToParent(result);
-    	});
-        
+            tempResult = result;
+        });
+        setTimeout(()=>{
+            this.setState({tempResult: tempResult});
+            this.updateToParent(tempResult);
+        },2000)
+        this.setState({tempResult: tempResult});
+        this.updateToParent(tempResult);
         console.log(temp);
         return response;
       });
