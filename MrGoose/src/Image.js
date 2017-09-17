@@ -10,6 +10,7 @@ class Image extends React.Component {
       this.scrollToTop = this.scrollToTop.bind(this);
       this._handleSubmit = this._handleSubmit.bind(this);
       this.updateToParent = this.updateToParent.bind(this);
+      //this.update = this.update.bind(this);
     }
   
     //general scaling
@@ -47,16 +48,15 @@ class Image extends React.Component {
       }).then(function(response) {
         console.log(response);
         const temp = response.json().then(function(result){ 
-        tempResult = result;
-	});
+            this.setState({promiseValue: result});
+            this.updateToParent(result);
+    	});
         
         console.log(temp);
         return response;
-      })
-      setTimeout(function(){
-        this.setState({tempResult: tempResult});
-        this.updateToParent(tempResult);
-      }, 5000);
+      });
+
+
       
     }
 
