@@ -45,13 +45,7 @@ class App extends Component {
 
 
   callback = (dataFromChild) => {
-    if(dataFromChild > 0)
-    {
-      this.setState({ result: dataFromChild, ifShowImage:'none',ifShowResult:'block'});
-    }
-    else{
-      this.setState({ result: 'Somethings went wrong! Either no image is submitted, or the image format is not supported', ifShowImage:'none',ifShowResult:'block'});
-    }      
+    this.setState({ result: dataFromChild, ifShowImage:'none',ifShowResult:'block'});
   }
 
   

@@ -35,7 +35,7 @@ class Result extends React.Component {
         return (
            <div style = {style}>
                <h1>
-                   {this.props.result}
+                   The image received a {this.props.result} from our beloved Mr.Goose!
                </h1>
            </div>
         )
