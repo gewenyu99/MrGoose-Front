@@ -54,7 +54,7 @@ class App extends Component {
     const style1 = {
       marginTop: '0',
       position: 'absolute',
-      left: ''+0.3*this.state.width,
+      left: ''+0.27*this.state.width,
       top: ''+0.01*this.state.width
     }
     const style21 = {
@@ -83,7 +83,7 @@ class App extends Component {
     const style3 = {
       marginTop: '0',
       position: 'absolute',
-      left: ''+0.65*this.state.width,
+      left: ''+0.68*this.state.width,
       top: ''+0.01*this.state.width
     }
 
@@ -107,16 +107,16 @@ class App extends Component {
       marginTop: '0',
       display: 'inline-block',
       position: 'absolute',
-      left: ''+0.12*this.state.width,
-      top: '0'
+      left: ''+0.08*this.state.width,
+      top: '-2vw'
     }
 
     const god2CSS = {
       marginTop: '0',
       display: 'inline-block',
       position: 'absolute',
-      left: ''+0.68  *this.state.width,
-      top: '0'
+      left: ''+0.72  *this.state.width,
+      top: '-2vw'
     }
 
     

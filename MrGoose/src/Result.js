@@ -1,5 +1,7 @@
 import React, {Component} from 'react'; 
 
+import god from './god2.jpg'
+
 class Result extends React.Component {
     constructor(props) {
       super(props);
@@ -26,7 +28,7 @@ class Result extends React.Component {
             left:this.state.width * 0.18 + 'px',
             position: 'absolute',
             top:'15vw',
-            fontSize: '2vw',
+            fontSize: '1vw',
             marginLeft: this.state.width * 0.05 + 'px',
             width: this.state.width * 0.5,
             display: this.props.ifShow
@@ -37,6 +39,7 @@ class Result extends React.Component {
                <h1>
                    {this.props.result}
                </h1>
+               <img src={god} />
            </div>
         )
     }
