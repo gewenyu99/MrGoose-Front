@@ -49,7 +49,7 @@ class Image extends React.Component {
         console.log(response);
         const temp = response.json().then(function(result){ 
             tempResult = result;
-            window.alert(tempResult);
+            //window.alert(tempResult);
         });
       });
         setTimeout(()=>{
@@ -67,8 +67,6 @@ class Image extends React.Component {
         }else{
             this.props.returnValue('Oh no! Mr. Goose angrily rejected your image, something must have been wrong!');
         }
-        
-        
     }
   
 
