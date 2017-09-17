@@ -8,7 +8,7 @@ class App extends Component {
 
   constructor() {
     super();
-    this.state = { width: 0, height: 0, file: '',imagePreviewUrl: '', line1: 'Mr', line2: 'Goose' };
+    this.state = { width: 0, height: 0, file: '',imagePreviewUrl: '', line1: 'Mr', line2: 'Goose', ifShowImage:'inline-block', result: '0'};
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.onMouseOver1 = this.onMouseOver1.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
@@ -42,6 +42,9 @@ class App extends Component {
     this.setState({line2: 'Goose'});
   }
   
+  callback = (dataFromChild) => {
+    this.setState({ result: dataFromChild, ifShowImage:'none' });
+  }
 
   render() {
     const style1 = {
@@ -112,6 +115,8 @@ class App extends Component {
       top: '0'
     }
 
+    
+
     return (
       <div>
         <div className="App">
@@ -135,7 +140,9 @@ class App extends Component {
             </svg>
           </div>
           
-          <Image/>
+          <Image ifShow = {this.state.ifShowImage} returnValue={this.callback}/>
+
+
         </div>
       </div>
     );

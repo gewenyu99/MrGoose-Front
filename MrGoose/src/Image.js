@@ -3,8 +3,8 @@ import Scroll, {scroller} from 'react-scroll';
 import canada from './Canada.jpg'
 
 class Image extends React.Component {
-    constructor() {
-      super();
+    constructor(props) {
+      super(props);
       this.state = { width: 0, height: 0, file: '',imagePreviewUrl: '', w:'', h: '600', url: 'https://mr.goose.ml/api', promiseValue: ''};
       this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
       this.scrollToTop = this.scrollToTop.bind(this);
@@ -44,7 +44,7 @@ class Image extends React.Component {
       }).then(function(response) {
         console.log(response);
         const temp = response.json().then(function(result){ 
-		window.alert(result);
+        this.props.callbackFromParent(result);
 	});
 	
         console.log(temp);
@@ -76,7 +76,8 @@ class Image extends React.Component {
     render() {
         const style = {
             marginLeft: this.state.width * 0.05 + 'px',
-            width: this.state.width * 0.5
+            width: this.state.width * 0.5,
+            display: this.props.ifShow
         }
         
       
