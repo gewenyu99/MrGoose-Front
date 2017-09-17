@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Image from './Image';
+import Result from './Result';
 import mleaf from './Maple_Leaf.svg'
 import god from './god.png'
 
@@ -8,7 +9,7 @@ class App extends Component {
 
   constructor() {
     super();
-    this.state = { width: 0, height: 0, file: '',imagePreviewUrl: '', line1: 'Mr', line2: 'Goose', ifShowImage:'block', result: '0'};
+    this.state = { width: 0, height: 0, file: '',imagePreviewUrl: '', line1: 'Mr', line2: 'Goose', ifShowImage:'block', ifShowResult:'none', result: '0'};
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.onMouseOver1 = this.onMouseOver1.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
@@ -41,11 +42,20 @@ class App extends Component {
     this.setState({line1: 'Mr'});
     this.setState({line2: 'Goose'});
   }
-  
+
+
   callback = (dataFromChild) => {
-    this.setState({ result: dataFromChild, ifShowImage:'none' });
+    if(dataFromChild > 0)
+    {
+      this.setState({ result: dataFromChild, ifShowImage:'none',ifShowResult:'block'});
+    }
+    else{
+      this.setState({ result: 'Somethings went wrong! Either no image is submitted, or the image format is not supported', ifShowImage:'none',ifShowResult:'block'});
+    }      
   }
 
+  
+  
   render() {
     const style1 = {
       marginTop: '0',
@@ -141,7 +151,7 @@ class App extends Component {
           </div>
           
           <Image ifShow = {this.state.ifShowImage} returnValue={this.callback}/>
-
+          <Result ifShow = {this.state.ifShowResult} result={this.state.result}/>
 
         </div>
       </div>

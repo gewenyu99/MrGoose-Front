@@ -24,6 +24,9 @@ h1
   align-content: center;  
 }
 
+img:hover{
+  filter: opacity(20%);  
+}
 
 
 @font-face {

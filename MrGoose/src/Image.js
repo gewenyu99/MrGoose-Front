@@ -116,10 +116,6 @@ class Image extends React.Component {
                         onClick={(e)=>this._handleSubmit(e)}>Rate my image, Mr.Goose!
                     </button>
                 </form>
-                
-                <p>
-                    
-                </p>
             </div>
         )
     }
