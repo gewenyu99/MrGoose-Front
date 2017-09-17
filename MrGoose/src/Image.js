@@ -46,7 +46,7 @@ class Image extends React.Component {
         const temp = response.json().then(function(result){ 
         this.state.promiseValue = result; 
 	});
-        this.props.returnValue(promiseValue);
+        this.props.returnValue(this.state.promiseValue);
         console.log(temp);
 
         return response;
