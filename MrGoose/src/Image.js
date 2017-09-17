@@ -53,7 +53,7 @@ class Image extends React.Component {
         });
       });
         setTimeout(()=>{
-            this.setState({tempResult: tempResult});
+            this.setState({promiseValue: tempResult});
             this.updateToParent(tempResult);
         },3000);
       
