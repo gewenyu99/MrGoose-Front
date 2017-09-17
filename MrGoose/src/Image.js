@@ -44,6 +44,9 @@ class Image extends React.Component {
       }).then(function(response) {
         console.log(response);
         const temp = response.json().stringify;
+
+        windo.alert(temp);
+
         return response;
       })
     }
