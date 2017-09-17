@@ -10,7 +10,9 @@ class App extends Component {
     super();
     this.state = { width: 0, height: 0, file: '',imagePreviewUrl: '', line1: 'Mr', line2: 'Goose' };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-    //this.onMouseLeave1 = this.onMouseLeave1.bind(this);
+    this.onMouseOver1 = this.onMouseOver1.bind(this);
+    this.onMouseLeave = this.onMouseLeave.bind(this);
+    this.onMouseOver2 = this.onMouseOver2.bind(this);
     let formData = new FormData();
   }
 
@@ -27,21 +29,19 @@ class App extends Component {
       this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
-  /*
   onMouseOver1(){
     this.setState({line1: 'He'});
-    this.setState({line2: 'attac'});
+    this.setState({line2: 'Attac'});
   }
   onMouseOver2(){
     this.setState({line1: 'He'});
+    this.setState({line2: 'Protec'});
   }
-  onMouseLeave1(){
-    window.alert('hi');
+  onMouseLeave(){
+    this.setState({line1: 'Mr'});
+    this.setState({line2: 'Goose'});
   }
-  onMouseLeave2(){
-    window.alert('bye');   
-  }
-   */ 
+  
 
   render() {
     const style1 = {
@@ -116,8 +116,8 @@ class App extends Component {
       <div>
         <div className="App">
           <div className='TitleBar'>
-            <img src = {god} width={this.state.width*0.2} style={god1CSS} /*onMouseOver={this.onMouseOver1} onMouseLeave = {this.onMouseLeave1}*//>
-            <img src = {god} width={this.state.width*0.2} style={god2CSS} /*onMouseOver={this.onMouseOver2} onMouseLeave = {this.onMouseLeave2} className = 'godReverse'*//>
+            <img src = {god} width={this.state.width*0.2} style={god1CSS} onMouseOver={this.onMouseOver1} onMouseLeave = {this.onMouseLeave}/>
+            <img src = {god} width={this.state.width*0.2} style={god2CSS} onMouseOver={this.onMouseOver2} onMouseLeave = {this.onMouseLeave} className = 'godReverse'/>
             <svg style = {style1} id= 'topleft'>
               <rect width={this.state.width*0.05} height={this.state.width*0.07} x="0" y="0" fill='#D91E18'/>
             </svg>
