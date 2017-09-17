@@ -8,7 +8,7 @@ class App extends Component {
 
   constructor() {
     super();
-    this.state = { width: 0, height: 0, file: '',imagePreviewUrl: '', line1: 'Mr', line2: 'Goose', ifShowImage:'inline-block', result: '0'};
+    this.state = { width: 0, height: 0, file: '',imagePreviewUrl: '', line1: 'Mr', line2: 'Goose', ifShowImage:'block', result: '0'};
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.onMouseOver1 = this.onMouseOver1.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
